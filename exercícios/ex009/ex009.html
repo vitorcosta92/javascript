@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você é brasileiro ou estrangeiro?</title>
+</head>
+<body>
+
+    <h1>Você é brasileiro ou estrangeiro?</h1>
+
+    Coloque o país ao lado:
+    <input type="text" name="nacionalidade" id="naci">
+    <input type="button" value="Descobrir" onclick="descobrir()">
+
+    <div id="res"></div>
+
+    <script>
+        // Função para normalizar o texto do usuário
+        function normalizarTexto(texto) {
+            return texto
+                .trim() // remove espaços no início e fim
+                .toLowerCase() // deixa tudo minúsculo
+                .normalize("NFD") // separa acentos das letras
+                .replace(/[\u0300-\u036f]/g, "") // remove acentos
+        }
+
+        function descobrir() {
+            var nac = document.querySelector('input#naci')
+            var res = document.querySelector('div#res')
+
+            var país = normalizarTexto(nac.value)
+
+            if (país == 'brasil') {
+                res.innerHTML = `<p>Você é brasileiro!</p>`
+            } else {
+                res.innerHTML = `<p>Você é gringo, meu chapa!</p>`
+            }
+        }
+    </script>
+
+</body>
+</html>
