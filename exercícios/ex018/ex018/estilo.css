@@ -21,6 +21,10 @@ section {
 
 }
 
+#res {
+    margin-top: 20px;
+}
+
 footer {
     text-align: center;
     color: black;
