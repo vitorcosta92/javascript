@@ -16,17 +16,18 @@ function contar(){
 
         if (ini < f) {
             for (let c = ini; c <=f; c += p){
-                res.innerHTML += `${c} 👉 `
+                res.innerHTML += `${c} 👉, `
             }
                 
                 res.innerHTML += `🏁`
+                res.innerHTML += `<br>Contagem Finalizada, meu parça! `
 
         } else {
             for (let c = ini; c >= f; c-= p){
-                res.innerHTML +=`${c} 👉 `
+                res.innerHTML +=`${c} 👉, `
                 }
                 res.innerHTML += `🏁`
-                
+                res.innerHTML += `<br>Contagem Finalizada, meu parça!`
         }
     
     } 
