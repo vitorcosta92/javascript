@@ -1,4 +1,4 @@
-function gerar() {
+function tabuada() {
     let numero = document.getElementById('txtnum')
     let tabuada = document.getElementById('tabuada')
 
@@ -10,7 +10,9 @@ function gerar() {
         tabuada.innerHTML = ''
 
         for (let c = 1; c <= 10; c += 1) {
-            tabuada.innerHTML += `<option>${n} x ${c} = ${n*c}</option>`
+            let item = document.createElement('option')     
+            item.text = `${n} x ${c} = ${n*c}`
+            tabuada.appendChild(item)
         }
     } 
 }

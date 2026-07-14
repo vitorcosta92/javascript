@@ -13,20 +13,24 @@ function contar(){
         let ini = Number(inicio.value)
         let f = Number(fim.value)
         let p = Number(passo.value)
+        if (p <= 0) {
+            window.alert('Passo inválido! Considerando PASSO 1')
+            p = 1
+        }
 
         if (ini < f) {
             for (let c = ini; c <=f; c += p){
-                res.innerHTML += `${c} 👉, `
+                res.innerHTML += `${c} \u{1F449}, `
             }
                 
-                res.innerHTML += `🏁`
+                res.innerHTML += `\u{1F3C1}`
                 res.innerHTML += `<br>Contagem Finalizada, meu parça! `
 
         } else {
             for (let c = ini; c >= f; c-= p){
-                res.innerHTML +=`${c} 👉, `
-                }
-                res.innerHTML += `🏁`
+                res.innerHTML +=`${c} \u{1F449}, `
+            }
+                res.innerHTML += `\u{1F3C1}`
                 res.innerHTML += `<br>Contagem Finalizada, meu parça!`
         }
     
